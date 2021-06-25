@@ -8,7 +8,7 @@ describe('User data change on input', () => {
       cy.get('[data-cy=display-name]').should('contain', 'Display Name:');
       cy.get('[data-cy=display-age]').should('contain', 'Display Age:');
       cy.get('[data-cy=name]').type('William');
-      cy.get(['[data-cy=age]']).type('25');
+      cy.get('[data-cy=age]').type('25');
     });
   });
 });

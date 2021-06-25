@@ -1,4 +1,9 @@
+import React, { useState } from 'react';
+
 function App() {
+  const [name, setName] = useState('William');
+  const [age, setAge] = useState('25');
+
   return (
     <div className='App'>
       <div>
@@ -7,17 +12,29 @@ function App() {
         </h2>
       </div>
       <div className='input-display'>
-        <p data-cy='display-name'>Display Name: </p>
-        <p data-cy='display-age'>Display Age: </p>
+        <p data-cy='display-name'>Display Name: {name}</p>
+        <p data-cy='display-age'>Display Age:{age}</p>
       </div>
       <div className='inputs'>
-        <div className='field'>
+        <div className='field' >
           <label className='label'>Name: </label>
-          <input className='input' type='text' placeholder='William' />
+          <input
+          data-cy='name'
+            className='input'
+            type='text'
+            onChange={(event) => setName(event.target.value)}
+            placeholder='William'
+          />
         </div>
         <div className='field'>
           <label className='label'>Age: </label>
-          <input className='input' type='number' placeholder='25' />
+          <input
+          data-cy='age'
+            className='input'
+            onChange={(event) => setAge(event.target.value)}
+            type='number'
+            placeholder='25'
+          />
         </div>
       </div>
     </div>
